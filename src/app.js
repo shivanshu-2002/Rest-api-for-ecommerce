@@ -7,14 +7,8 @@ const saltRounds = 10; // Number of salt rounds for bcrypt
 
 // Hash the API key
 const hashedAPIKey = bcrypt.hashSync(process.env.API_KEY, saltRounds);
-
 // Verify an API key
-
-
 const port = process.env.PORT || 8000;
-
-
-
 require('./db/conn');
 const Product = require('./model/mod');
 
