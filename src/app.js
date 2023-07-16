@@ -72,6 +72,7 @@ app.patch("/update/:id", async (req, res) => {
 // handling del...
 app.delete("/delete/:id", async (req, res) => {
     const apiKey = req.headers['bearer'];
+    console.log(apiKey)
     const isValidAPIKey = bcrypt.compareSync(apiKey, hashedAPIKey);
     if (isValidAPIKey) {
         try {
@@ -83,7 +84,7 @@ app.delete("/delete/:id", async (req, res) => {
         }
     }
     else {
-        res.status(403).json({ error: 'Permission denied' });
+        res.status(403).json({ error: 'Permission denieds' });
     }
 });
 
